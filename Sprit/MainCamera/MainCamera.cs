@@ -1,29 +1,23 @@
-using System.Drawing;
 using UnityEngine;
 
-public class MainCamera : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public float scrollSpeed = 5f;
+    public float scrollSpeed = 2f;
 
     void Update()
     {
-        // 左右移动
-        // 范围：-10~10
-
-        float horizontalInput = Input.GetAxis("Horizontal");
-        transform.position += new Vector3(horizontalInput * moveSpeed * Camera.main.orthographicSize * Time.deltaTime, 0f, 0f);
-
-
-        // 上下移动
-        // 范围：-10~10
-        float verticalInput = Input.GetAxis("Vertical");
-        transform.position += new Vector3(0f, verticalInput * moveSpeed * Camera.main.orthographicSize * Time.deltaTime, 0f);
-
-        // 鼠标滚轮缩放
-        // 缩放范围：0.5~20
-
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         Camera.main.orthographicSize -= scroll * scrollSpeed;
+        Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, 1f, 100f);
+
+        // 键盘控制移动
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+        Vector3 moveDirection = new Vector3(horizontalInput, verticalInput, 0f);
+        transform.Translate(moveDirection * moveSpeed * Camera.main.orthographicSize * Time.deltaTime);
+
+        // 鼠标滚轮控制缩放
+
     }
 }

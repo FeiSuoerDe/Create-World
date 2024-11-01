@@ -10,13 +10,10 @@ public class WorldUI : MonoBehaviour
     public SpriteRenderer spriteRenderer;
 
     private Camera mainCamera;
+    private
 
     void Start()
     {
-        // 获取 Tilemap 组件
-        // Get the Tilemap component
-        tilemap = GetComponent<Tilemap>();
-
         // 获取主摄像机并缓存
         // Get the main camera and cache it
         mainCamera = Camera.main;
@@ -37,6 +34,8 @@ public class WorldUI : MonoBehaviour
             // 更新 UI 元素的位置
             // Update the position of the UI element
             spriteRenderer.transform.position = tilemap.GetCellCenterWorld(cellPosition) - new Vector3(0.5f, 0.5f, 0);
+
+
         }
     }
 }

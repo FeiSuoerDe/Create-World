@@ -265,8 +265,8 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
-  orthographic: 0
+  field of view: 26.991467
+  orthographic: 1
   orthographic size: 17.13183
   m_Depth: -1
   m_CullingMask:
@@ -292,7 +292,7 @@ Transform:
   m_GameObject: {fileID: 166163540}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.4, y: 7.5, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  scrollSpeed: 2
+  scrollSpeed: 10
 --- !u!1 &1558265848
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 1783375588}
   maxMapSize: {x: 128, y: 128}
-  seed: 1116783768
+  seed: 1086896107
   useCustomSeed: 1
   DeepTile: {fileID: 11400000, guid: 72ebf6e64988c5c49897701ab2390667, type: 2}
   WaterTile: {fileID: 11400000, guid: e2f8c60878cb32441bfe05c3e39997de, type: 2}
