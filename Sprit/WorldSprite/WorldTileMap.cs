@@ -57,8 +57,12 @@ public class WorldTileMap : MonoBehaviour
     public float amplitudeReducer = 0.5f;
 
     private float[,] mapData;
-    private WorldTileMapData[,] worldTileMapDataArray { get; set; }
+    public WorldTileMapData[,] worldTileMapDataArray;
 
+    // public WorldTileMapData GetWorldTileMapData(int x, int y)
+    // {
+    //     return worldTileMapDataArray[x, y];
+    // }
     public void MakeMap()
     {
         mapData = new float[maxMapSize.x, maxMapSize.y];

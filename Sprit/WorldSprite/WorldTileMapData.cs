@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-class WorldTileMapData
+public class WorldTileMapData
 
 {
     // namme
