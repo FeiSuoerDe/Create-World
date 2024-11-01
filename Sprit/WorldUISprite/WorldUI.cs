@@ -15,7 +15,7 @@ public class WorldUI : MonoBehaviour
     {
         // 获取主摄像机并缓存
         // Get the main camera and cache it
-        mainCamera = Camera.main; s
+        mainCamera = Camera.main;
     }
 
     void Update()
