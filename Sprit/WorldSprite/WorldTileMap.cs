@@ -59,10 +59,11 @@ public class WorldTileMap : MonoBehaviour
     private float[,] mapData;
     public WorldTileMapData[,] worldTileMapDataArray;
 
-    // public WorldTileMapData GetWorldTileMapData(int x, int y)
-    // {
-    //     return worldTileMapDataArray[x, y];
-    // }
+
+    public WorldTileMapData GetWorldTileMapData(int x, int y)
+    {
+        return worldTileMapDataArray[x, y];
+    }
     public void MakeMap()
     {
         mapData = new float[maxMapSize.x, maxMapSize.y];
@@ -71,6 +72,11 @@ public class WorldTileMap : MonoBehaviour
         GenerateRivers();
     }
 
+    void Start()
+    {
+        ClearMap();
+        MakeMap();
+    }
     public void GenerateMap()
     {
         ClearMap();
