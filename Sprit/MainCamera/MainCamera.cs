@@ -4,7 +4,7 @@ using UnityEngine;
 public class MainCamera : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public float scrollSpeed = 2f;
+    public float scrollSpeed = 5f;
 
     void Update()
     {
@@ -12,13 +12,13 @@ public class MainCamera : MonoBehaviour
         // 范围：-10~10
 
         float horizontalInput = Input.GetAxis("Horizontal");
-        transform.position += new Vector3(horizontalInput * moveSpeed * Time.deltaTime, 0f, 0f);
+        transform.position += new Vector3(horizontalInput * moveSpeed * Camera.main.orthographicSize * Time.deltaTime, 0f, 0f);
 
 
         // 上下移动
         // 范围：-10~10
         float verticalInput = Input.GetAxis("Vertical");
-        transform.position += new Vector3(0f, verticalInput * moveSpeed * Time.deltaTime, 0f);
+        transform.position += new Vector3(0f, verticalInput * moveSpeed * Camera.main.orthographicSize * Time.deltaTime, 0f);
 
         // 鼠标滚轮缩放
         // 缩放范围：0.5~20

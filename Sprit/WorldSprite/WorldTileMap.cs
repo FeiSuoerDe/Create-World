@@ -57,7 +57,7 @@ public class WorldTileMap : MonoBehaviour
     public float amplitudeReducer = 0.5f;
 
     private float[,] mapData;
-    private WorldTileMapData[,] worldTileMapDataArray;
+    private WorldTileMapData[,] worldTileMapDataArray { get; set; }
 
     public void MakeMap()
     {
@@ -163,7 +163,7 @@ public class WorldTileMap : MonoBehaviour
         return 6; // 雪 Snow
     }
 
-    private void ClearMap()
+    public void ClearMap()
     {
         // 清除地图上的所有瓷砖
         // Clear all tiles on the map
